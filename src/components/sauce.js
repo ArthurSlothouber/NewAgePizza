@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 export class SauceForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: 'red' };
+        this.state = { value: '' };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +20,7 @@ export class SauceForm extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+        alert('A Sauce was submitted: ' + this.state.value);
         event.preventDefault();
     }
 

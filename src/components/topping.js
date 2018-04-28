@@ -21,11 +21,12 @@ export class ToppingForm extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+        alert('A Topping was submitted: ' + this.state.value);
         event.preventDefault();
     }
 
-    render() {
+
+render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
