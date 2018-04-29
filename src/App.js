@@ -4,7 +4,8 @@ import './App.css';
 import { BaseForm } from './components/base';
 import { SauceForm } from './components/sauce';
 import { ToppingForm } from './components/topping';
-import Submitted from './containers/submitted'
+import Base from './containers/base'
+import { Submitted } from './components/submit';
 
 class App extends Component {
   render() {

@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import { bindActionCreators } from 'redux';
 
 
 
@@ -23,6 +23,8 @@ export class ToppingForm extends React.Component {
     handleSubmit(event) {
         alert('A Topping was submitted: ' + this.state.value);
         event.preventDefault();
+        console.log(this.state);
+        
     }
 
 
@@ -46,3 +48,11 @@ render() {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        toppings: state.toppings,
+    }
+}
+
+export default connect(mapStateToProps)(ToppingForm);

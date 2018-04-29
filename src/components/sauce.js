@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import { bindActionCreators } from 'redux';
 
 
 
@@ -22,6 +22,7 @@ export class SauceForm extends React.Component {
     handleSubmit(event) {
         alert('A Sauce was submitted: ' + this.state.value);
         event.preventDefault();
+        console.log(this.state)
     }
 
     render() {
@@ -41,3 +42,11 @@ export class SauceForm extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        sauce: state.sauce,
+    }
+}
+
+export default connect(mapStateToProps)(SauceForm);

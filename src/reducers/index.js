@@ -1,12 +1,11 @@
 import BaseReducer from './baseReducer'
 import SauceReducer from './sauceReducer'
-import ToppingsRedcer from './toppingsReducer'
+import ToppingsReducer from './toppingsReducer'
 
 
 
 export default {
     base: BaseReducer,
     sauce: SauceReducer,
-    toppings: ToppingsRedcer
-
+    toppings: ToppingsReducer
 }

@@ -1,9 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
-
-
+import { bindActionCreators } from 'redux';
 
 
 export class BaseForm extends React.Component {
@@ -22,6 +20,7 @@ export class BaseForm extends React.Component {
     handleSubmit(event) {
         alert('A Base was submitted: ' + this.state.value);
         event.preventDefault();
+        console.log(this.state);
     }
 
     render() {
@@ -30,10 +29,10 @@ export class BaseForm extends React.Component {
                 <label>
                     Pick your base
           <select value={this.state.value} onChange={this.handleChange}>
-                        <option value="25cm">25cm NY Style € 8,99</option>
-                        <option value="30cm">30cm NY Style € 11,49</option>
-                        <option value="35cm">35cm NY Style € 13,49</option>
-                        <option value="20cm">20cm NY Style</option>
+                        <option value="8,99">25cm NY Style € 8,99</option>
+                        <option value="11,49">30cm NY Style € 11,49</option>
+                        <option value="13,49">35cm NY Style € 13,49</option>
+                        <option value="6,45">20cm NY Style € 6,45</option>
                     </select>
                 </label>
                 <input type="submit" value="Submit" />
@@ -41,3 +40,11 @@ export class BaseForm extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        base: state.base,
+    }
+}
+
+export default connect(mapStateToProps)(BaseForm);
